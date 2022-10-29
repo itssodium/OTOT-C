@@ -58,7 +58,7 @@ function authenticateToken(req, res, next) {
     const authHeader = req.headers['authorization']
     const token = authHeader && authHeader.split(' ')[1]
     if (token == null) {
-        return res.staus(401).send('Pls login before accessing this page')
+        return res.status(401).send('Pls login before accessing this page')
     }
 
     jwt.verify(token, TOKEN, (err, user) => {
